@@ -1,0 +1,7 @@
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  token     String?  // store last valid JWT token (for single session logic)
+  createdAt DateTime @default(now())
+}
